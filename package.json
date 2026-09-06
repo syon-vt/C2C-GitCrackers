@@ -1,20 +1,28 @@
 {
-  "name": "c2c-gitcrackers",
+  "name": "mcp-sentinel",
   "version": "1.0.0",
-  "description": "",
-  "homepage": "https://github.com/syon-vt/C2C-GitCrackers#readme",
-  "bugs": {
-    "url": "https://github.com/syon-vt/C2C-GitCrackers/issues"
+  "description": "Inline security proxy for the Model Context Protocol (MCP)",
+  "type": "module",
+  "main": "dist/proxy.js",
+  "bin": {
+    "mcp-sentinel": "./dist/proxy.js",
+    "mcp-sentinal": "./dist/proxy.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/syon-vt/C2C-GitCrackers.git"
-  },
-  "license": "ISC",
-  "author": "",
-  "type": "commonjs",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "tsx src/proxy.ts",
+    "build": "tsc",
+    "start": "tsx src/proxy.ts",
+    "test": "tsx test/test-sentinel.ts",
+    "logs": "node dist/proxy.js logs",
+    "patch": "node dist/proxy.js patch",
+    "watch": "node dist/proxy.js watch",
+    "unpatch": "node dist/proxy.js unpatch"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.5.0"
   }
 }
+
